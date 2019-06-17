@@ -24,5 +24,9 @@ body:not(.page-responsive) .grb-browser {
 }
 
 .grb-highlight {
-	box-shadow: 0 0 5px 2px rgba(0, 56, 234, 0.2);
+	box-shadow: 0 0 5px 2px rgba(0, 56, 234, 0.3);
+}
+
+.grb-reaction {
+	margin: 0 0.5em;
 }
