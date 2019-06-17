@@ -1,0 +1,15 @@
+{
+  "name": "github-reaction-browse",
+  "version": "1.0.0",
+  "description": "Browse Github issues by reaction",
+  "author": "Moritz Jacobs <mail@moritzjacobs.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-peerigon": "^19.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  }
+}

@@ -1,0 +1,28 @@
+.grb-browser {
+	display: flex;
+	max-width: 77%;
+	bottom: 30px;
+	right: 0;
+	width: 100%;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	margin: 0 0 1rem 0;
+}
+
+body:not(.page-responsive) .grb-browser {
+	padding-left: 60px;
+}
+
+.grb-browser-button {
+	background: transparent;
+	padding: 0.5em 1.25em;
+	white-space: nowrap;
+
+	border: 1px solid #ccc;
+	margin-right: -1px;
+	margin-top: -1px;
+}
+
+.grb-highlight {
+	box-shadow: 0 0 5px 2px rgba(0, 56, 234, 0.2);
+}
