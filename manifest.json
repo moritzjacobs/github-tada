@@ -1,8 +1,7 @@
 {
-	"name": "issue-yay-nay",
+	"name": "github-tada",
 	"version": "1.0",
 	"description": "Browse Github issues by reaction",
-	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; font-src 'self' data:;",
 	"content_scripts": [
 		{
 			"js": [
