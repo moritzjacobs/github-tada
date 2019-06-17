@@ -5,7 +5,7 @@
 	"author": "Moritz Jacobs <mail@moritzjacobs.de>",
 	"license": "MIT",
 	"scripts": {
-		"build": "yarn webpack"
+		"build": "rm -rf dist/ && yarn webpack"
 	},
 	"devDependencies": {
 		"css-loader": "^3.0.0",

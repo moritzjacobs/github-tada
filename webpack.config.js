@@ -1,3 +1,4 @@
+/* eslint-disable import/unambiguous */
 module.exports = {
 	module: {
 		rules: [
@@ -8,6 +9,3 @@ module.exports = {
 		],
 	},
 };
-
-export {};
-
