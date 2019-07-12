@@ -1,4 +1,9 @@
-import {SELECTOR_COMMENT, SELECTOR_EMOJI, SELECTOR_REACTION, REACTION_THRESHOLD} from "./constants";
+import {
+	SELECTOR_COMMENT,
+	SELECTOR_COMMENT_CONTAINER,
+	SELECTOR_EMOJI,
+	SELECTOR_REACTION,
+} from "./constants";
 
 /**
  * Extract relevant information from single reaction
@@ -38,15 +43,6 @@ function commentParser(el) {
 		return sum + r.count;
 	}, 0);
 
-	// calculate fraction of each reaction of total of reactions
-	reactions.single = reactions.single.map(r => {
-		const fraction = r.count / reactions.total;
-
-		return {...r, fraction};
-	});
-
-	reactions.single = reactions.single.filter(r => r.fraction > REACTION_THRESHOLD);
-
 	reactions.single.sort((a, b) => b.count - a.count);
 
 	return {
@@ -55,4 +51,17 @@ function commentParser(el) {
 	};
 }
 
-export default commentParser;
+/**
+ * parse comments from DOM and return data structure
+ *
+ * @returns {object}
+ */
+function getComments() {
+	const commentsEls = document.querySelectorAll(SELECTOR_COMMENT_CONTAINER);
+
+	return [...commentsEls].map(commentParser).filter(comment => {
+		return comment.reactions.total > 0;
+	});
+}
+
+export default getComments;

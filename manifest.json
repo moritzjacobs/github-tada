@@ -5,10 +5,10 @@
 	"content_scripts": [
 		{
 			"js": [
-				"../dist/main.js"
+				"./dist/main.js"
 			],
-			"csss": [
-				"../dist/main.css"
+			"css": [
+				"./dist/main.css"
 			],
 			"matches": [
 				"https://github.com/*/issues/*",
