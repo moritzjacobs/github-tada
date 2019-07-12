@@ -13,9 +13,11 @@
 		"css-loader": "^3.0.0",
 		"eslint": "^5.16.0",
 		"eslint-config-peerigon": "^19.0.0",
+		"node-sass": "^4.12.0",
+		"sass-loader": "^7.1.0",
 		"style-loader": "^0.23.1",
 		"web-ext": "^3.0.0",
-		"webpack": "^4.34.0",
+		"webpack": "^4.35.3",
 		"webpack-cli": "^3.3.4"
 	}
 }

@@ -1,0 +1,48 @@
+$baseClass: ".grb";
+
+#{$baseClass}-browser {
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  max-width: 100px;
+  bottom: 20px;
+  left: 0;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+
+  &-button {
+    background: transparent;
+    padding: 0.5em 1.25em;
+    white-space: nowrap;
+
+    border: none;
+    margin-right: -1px;
+    margin-top: -1px;
+    height: 30px;
+
+    font-size: 32px;
+    line-height: 0;
+  }
+}
+
+#{$baseClass}-highlight {
+  box-shadow: 0 0 5px 2px rgba(0, 56, 234, 0.3);
+}
+
+#{$baseClass}-reaction {
+  position: relative;
+  margin: 0 0.5rem;
+  &:after {
+    content: attr(data-grb-count);
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 0.5em;
+  }
+}
