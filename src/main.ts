@@ -1,18 +1,18 @@
-import getComments from "./comments";
+import {Comment} from "./comments";
 import scrollTo from "./scrollTo";
 import {
 	CLASS_BUTTON,
 	CLASS_REACTION,
 	CLASS_WRAPPER,
-	SELECTOR_TARGET,
 } from "./constants";
 
-function removeElement(element) {
+// safely remove a DOM node
+export const removeElement = (element: Node) => {
 	element && element.parentNode && element.parentNode.removeChild(element);
-}
+};
 
-function purgeAndRecreate() {
-	// remove old self before creating a new one
+// remove old self before creating a new one
+export const purgeAndRecreate = () => {
 	removeElement(document.getElementById(CLASS_WRAPPER));
 
 	// DOM cache
@@ -22,21 +22,22 @@ function purgeAndRecreate() {
 	el.id = CLASS_WRAPPER;
 
 	return el;
-}
+};
 
-function buildCommentButton(comments, comment, appendTo) {
+// append button for comment
+export const buildCommentButton = (comments: Array<Comment>, comment: Comment, appendTo: Node) => {
 	const button = document.createElement("button");
 
 	button.classList.add(CLASS_BUTTON);
 
 	// add every reaction to the button
 
-	comment.reactions.single.forEach(r => {
+	comment.reactions.forEach(r => {
 		const reactionEl = document.createElement("span");
 
 		reactionEl.classList.add(CLASS_REACTION);
 		reactionEl.innerText += `${r.emoji}`;
-		reactionEl.dataset.grbCount = r.count;
+		reactionEl.dataset.grbCount = r.count.toString();
 
 		button.appendChild(reactionEl);
 	});
@@ -44,20 +45,4 @@ function buildCommentButton(comments, comment, appendTo) {
 	button.addEventListener("click", () => scrollTo(comment.el, comments));
 
 	appendTo.appendChild(button);
-}
-
-function main() {
-	const el = purgeAndRecreate();
-	// cache DOM els
-	const header = document.querySelector(SELECTOR_TARGET);
-	// assemble all relevant data
-	const comments = getComments();
-
-	// create button for every comment
-	comments.forEach(comment => buildCommentButton(comments, comment, el));
-
-	// append everything to DOM
-	header.appendChild(el);
-}
-
-export default main;
+};

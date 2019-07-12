@@ -1,12 +1,8 @@
 import {CLASS_HIGHLIGHT} from "./constants";
+import {Comment} from "./comments";
 
-/**
- * Click handler: scroll into view
- *
- * @param {HTMLElement} targetCommentEl
- * @param {Array<object>} comments
- */
-function scrollTo(targetCommentEl, comments) {
+// Click handler: scroll into view
+const scrollTo = (targetCommentEl: HTMLElement, comments: Array<Comment>): void => {
 	targetCommentEl.scrollIntoView({behavior: "smooth", block: "center"});
 
 	// remove highlight from any other comment ...
@@ -16,6 +12,6 @@ function scrollTo(targetCommentEl, comments) {
 
 	// and add highlight to this comment
 	targetCommentEl.classList.add(CLASS_HIGHLIGHT);
-}
+};
 
 export default scrollTo;

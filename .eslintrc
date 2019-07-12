@@ -1,17 +1,24 @@
 {
 	"extends": [
-		"peerigon"
+		"peerigon",
+		"peerigon/typescript",
+		"peerigon/styles/prefer-arrow"
 	],
 	"env": {
 		"node": true,
 		"browser": true
 	},
 	"root": true,
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
+	},
 	"rules": {
 		"no-tabs": "off",
-		"indent": [
-			"error",
-			"tab"
-		]
-	}
+		"indent": ["error", "tab"],
+		"@typescript-eslint/indent": ["error", "tab"]
+	},
 }
