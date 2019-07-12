@@ -11,13 +11,13 @@
 	},
 	"devDependencies": {
 		"css-loader": "^3.0.0",
-		"eslint": "^5.16.0",
-		"eslint-config-peerigon": "^19.0.0",
+		"eslint": "^6.0.1",
+		"eslint-config-peerigon": "^21.2.0",
 		"node-sass": "^4.12.0",
 		"sass-loader": "^7.1.0",
 		"style-loader": "^0.23.1",
-		"web-ext": "^3.0.0",
+		"web-ext": "^3.1.0",
 		"webpack": "^4.35.3",
-		"webpack-cli": "^3.3.4"
+		"webpack-cli": "^3.3.5"
 	}
 }
