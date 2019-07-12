@@ -1,0 +1,1 @@
+zip -r ../github-tada-src.zip ./ -x ./.scripts/\* ./dist/\* ./node_modules/\* ./web-ext-artifacts/\*

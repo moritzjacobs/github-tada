@@ -7,7 +7,9 @@
 	"scripts": {
 		"web-ext:watch": "web-ext run",
 		"dev": "webpack -w & yarn web-ext:watch",
-		"build": "rm -rf dist/ && yarn webpack && web-ext build -o"
+		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o",
+		"publish": "yarn build && yarn publish-src",
+		"publish-src": "./.scripts/publish-src.sh"
 	},
 	"devDependencies": {
 		"css-loader": "^3.0.0",
