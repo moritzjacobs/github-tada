@@ -1,0 +1,11 @@
+export const CLASS_BUTTON = "grb-browser-button";
+export const CLASS_HIGHLIGHT = "grb-highlight";
+export const CLASS_REACTION = "grb-reaction";
+export const CLASS_WRAPPER = "grb-browser";
+export const COMMENT_THRESHOLD = 0.025;
+export const REACTION_THRESHOLD = 0.25;
+export const SELECTOR_COMMENT = ".js-comment";
+export const SELECTOR_COMMENT_CONTAINER = ".js-comment-container";
+export const SELECTOR_EMOJI = ".emoji";
+export const SELECTOR_REACTION = ".reaction-summary-item";
+export const SELECTOR_TARGET = ".discussion-header, #partial-discussion-header";
