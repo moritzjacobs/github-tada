@@ -9,8 +9,8 @@
 		"web-ext:watch": "web-ext run",
 		"dev": "webpack -w & yarn web-ext:watch",
 		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o",
-		"publish": "yarn build && yarn publish-src",
-		"publish-src": "./.scripts/publish-src.sh"
+		"prepublish": "yarn build && yarn publish-src",
+		"publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\*"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^1.12.0",
