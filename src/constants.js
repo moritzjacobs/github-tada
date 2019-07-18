@@ -1,4 +1,4 @@
-export const CLASS_BUTTON = "grb-browser-button";
+export const CLASS_BUTTON = "grb-button";
 export const CLASS_HIGHLIGHT = "grb-highlight";
 export const CLASS_REACTION = "grb-reaction";
 export const CLASS_WRAPPER = "grb-browser";
