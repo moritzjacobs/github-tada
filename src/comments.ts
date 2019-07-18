@@ -5,14 +5,14 @@ import {
 	SELECTOR_REACTION,
 } from "./constants";
 
-type Reaction = {
+export type Reaction = {
 	emoji: string,
 	type: string,
 	count: number,
 };
 
 export type Comment = {
-	el: HTMLElement,
+	target: HTMLElement,
 	reactions: Array<Reaction>,
 };
 
@@ -37,12 +37,15 @@ const reactionParser = (el: HTMLButtonElement): Reaction | null => {
 // Extract relevant information from comment
 const commentParser = (el: HTMLElement): Comment => {
 	const reactionEls = Array.from(el.querySelectorAll(SELECTOR_REACTION));
-	const reactions: Array<Reaction> = reactionEls.map(reactionParser).filter(r => Boolean(r));
+
+	const reactions: Array<Reaction> = reactionEls
+		.map(reactionParser)
+		.filter(r => Boolean(r));
 
 	reactions.sort((a, b) => b.count - a.count);
 
 	return {
-		el: el.querySelector(SELECTOR_COMMENT),
+		target: el.querySelector(SELECTOR_COMMENT),
 		reactions,
 	};
 };
@@ -51,7 +54,9 @@ const commentParser = (el: HTMLElement): Comment => {
 const getComments = (): Array<Comment> => {
 	const commentsEls = document.querySelectorAll(SELECTOR_COMMENT_CONTAINER);
 
-	return Array.from(commentsEls, commentParser).filter(comment => Boolean(comment.reactions));
+	return Array.from(commentsEls, commentParser).filter(comment =>
+		Boolean(comment.reactions)
+	);
 };
 
 export default getComments;

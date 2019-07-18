@@ -1,6 +1,7 @@
 {
 	"extends": [
 		"peerigon",
+		"peerigon/react",
 		"peerigon/typescript",
 		"peerigon/styles/prefer-arrow"
 	],
@@ -19,6 +20,7 @@
 	"rules": {
 		"no-tabs": "off",
 		"indent": ["error", "tab"],
-		"@typescript-eslint/indent": ["error", "tab"]
+		"@typescript-eslint/indent": ["error", "tab"],
+		"react/jsx-indent": ["error", "tab"]
 	},
 }

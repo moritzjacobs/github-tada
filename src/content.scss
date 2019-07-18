@@ -1,79 +1,76 @@
 $baseClass: ".grb";
 
 @mixin borderBox {
-  *,
-  *:after,
-  *:before {
-    box-sizing: border-box;
-  }
+	*,
+	*:after,
+	*:before {
+		box-sizing: border-box;
+	}
 }
 
 #{$baseClass}-browser {
-  @include borderBox();
-  position: fixed;
-  display: flex;
+	@include borderBox();
+	position: fixed;
+	display: flex;
 
-  top: 50%;
-  left: 0;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  transform: translateY(-50%);
+	top: 50%;
+	left: 0;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	transform: translateY(-50%);
 }
 
 #{$baseClass}-button {
-  display: block;
-  position: relative;
-  background: transparent;
-  padding: 0.5em 1.25em;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
+	display: block;
+	position: relative;
+	background: transparent;
+	padding: 0.5em 1.25em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
 
-  border: none;
-  padding: 0.25rem 0 0.25rem 1rem;
+	border: none;
+	padding: 0.25rem 0 0.25rem 1rem;
 
-  height: 2rem;
-  text-align: left;
+	height: 2rem;
+	text-align: left;
 
-  transform-origin: 0 50%;
-  transition: transform 400ms;
+	transform-origin: 0 50%;
+	transition: transform 400ms;
 
-  &:before {
-    content: "";
-    height: 3px;
-    width: 1em;
-    background-color: #888;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
-    transition: transform 400ms;
-  }
+	&:before {
+		content: "";
+		height: 3px;
+		width: 1em;
+		background-color: #888;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(-50%, -50%);
+		transition: transform 400ms;
+	}
 
-  &:hover {
-    transform: scale(1.25);
-    &:before {
-      transform: scale(0.8) translate(-2px, -50%);
-    }
-  }
+	&:hover {
+		transform: scale(1.25);
+		&:before {
+			transform: scale(0.8) translate(-2px, -50%);
+		}
+	}
 }
 
 #{$baseClass}-reaction {
-  margin-right: 0.25rem;
-  &:after {
-    content: attr(data-grb-count);
-    font-weight: bold;
-    color: #888;
-    display: inline-block;
-    margin-left: 0.5em;
-    text-shadow: 0 0 3px rgba(#fff, 0.4);
-    font-size: 0.75em;
-  }
+	margin-right: 0.25rem;
+	font-weight: bold;
+	color: #888;
+	display: inline-block;
+	margin-left: 0.5em;
+	text-shadow: 0 0 3px rgba(#fff, 0.4);
+	font-size: 0.75em;
 }
 
 #{$baseClass}-highlight {
-  border-color: #2188ff;
-  box-shadow: 0 0 0 0.2em #c8e1ff;
+	border-color: #2188ff;
+	box-shadow: 0 0 0 0.2em #c8e1ff;
 }
