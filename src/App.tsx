@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "./Button";
 import {Comment} from "./comments";
-import {CLASS_WRAPPER} from "./constants";
 
 type Props = {
 	comments: Array<Comment>,
@@ -9,12 +8,14 @@ type Props = {
 
 const App = ({comments}: Props) => {
 	return (
-
-		<nav className={CLASS_WRAPPER}>
+		<>
+			<div className="discussion-sidebar-heading text-bold">
+				Browse by reaction
+			</div>
 			{comments.map(c => (
 				<Button key={c.target.dataset.gid} target={c.target} reactions={c.reactions} />
 			))}
-		</nav>
+		</>
 	);
 };
 

@@ -54,8 +54,8 @@ const commentParser = (el: HTMLElement): Comment => {
 const getComments = (): Array<Comment> => {
 	const commentsEls = document.querySelectorAll(SELECTOR_COMMENT_CONTAINER);
 
-	return Array.from(commentsEls, commentParser).filter(comment =>
-		Boolean(comment.reactions)
+	return Array.from(commentsEls, commentParser).filter(
+		comment => comment.reactions && comment.reactions.length > 0
 	);
 };
 

@@ -9,6 +9,7 @@ const Button = ({target, reactions}: Comment) => {
 			{reactions.map(r => (
 				<span key={r.type} className={CLASS_REACTION}>
 					{r.emoji}
+					&nbsp;
 					{r.count}
 				</span>
 			))}
