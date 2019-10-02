@@ -5,6 +5,7 @@
 	"author": "Moritz Jacobs <mail@moritzjacobs.de>",
 	"license": "MIT",
 	"scripts": {
+		"test": "yarn lint && yarn build",
 		"lint": "eslint ./src",
 		"web-ext:watch": "web-ext run",
 		"dev": "webpack -w & yarn web-ext:watch",
@@ -13,30 +14,30 @@
 		"publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\*"
 	},
 	"devDependencies": {
-		"@types/react": "^16.8.23",
-		"@types/react-dom": "^16.8.4",
-		"@typescript-eslint/eslint-plugin": "^1.12.0",
-		"@typescript-eslint/parser": "^1.12.0",
-		"css-loader": "^3.0.0",
-		"eslint": "^6.0.1",
-		"eslint-config-peerigon": "^21.2.0",
+		"@types/react": "16.9.4",
+		"@types/react-dom": "16.9.1",
+		"@typescript-eslint/eslint-plugin": "1.12.0",
+		"@typescript-eslint/parser": "2.3.2",
+		"css-loader": "3.2.0",
+		"eslint": "6.5.1",
+		"eslint-config-peerigon": "21.2.0",
 		"eslint-import-resolver-typescript": "^1.1.1",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
-		"eslint-plugin-prefer-arrow": "^1.1.5",
-		"eslint-plugin-react": "^7.14.2",
-		"eslint-plugin-react-hooks": "^1.6.1",
-		"mini-css-extract-plugin": "^0.7.0",
+		"eslint-plugin-prefer-arrow": "1.1.6",
+		"eslint-plugin-react": "7.15.1",
+		"eslint-plugin-react-hooks": "2.1.1",
+		"mini-css-extract-plugin": "0.8.0",
 		"node-sass": "^4.12.0",
-		"sass-loader": "^7.1.0",
-		"style-loader": "^0.23.1",
-		"ts-loader": "^6.0.4",
-		"typescript": "^3.5.3",
-		"web-ext": "^3.1.0",
-		"webpack": "^4.35.3",
-		"webpack-cli": "^3.3.5"
+		"sass-loader": "8.0.0",
+		"style-loader": "1.0.0",
+		"ts-loader": "6.2.0",
+		"typescript": "3.6.3",
+		"web-ext": "3.2.0",
+		"webpack": "4.41.0",
+		"webpack-cli": "3.3.9"
 	},
 	"dependencies": {
-		"react": "^16.8.6",
-		"react-dom": "^16.8.6"
+		"react": "16.10.1",
+		"react-dom": "16.10.1"
 	}
 }
