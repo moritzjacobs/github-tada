@@ -1,5 +1,15 @@
-# github-tada :tada:
-Browse Github issues by reaction
+![logo](https://raw.githubusercontent.com/moritzjacobs/github-tada/master/icons/tada-openmoji-96.png)
+
+# github-tada
+
+Firefox addon to browse Github issues by reaction
+
+
+[Screenshot](https://addons.cdn.mozilla.net/user-media/previews/full/225/225594.png)
+
+## Installation
+
+[Get it from the Firefox Add-on gallery](https://addons.mozilla.org/en-US/firefox/addon/github-tada/)
 
 ## development
 
