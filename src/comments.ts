@@ -6,14 +6,14 @@ import {
 } from "./constants";
 
 export type Reaction = {
-	emoji: string,
-	type: string,
-	count: number,
+	emoji: string;
+	type: string;
+	count: number;
 };
 
 export type Comment = {
-	target: HTMLElement,
-	reactions: Array<Reaction>,
+	target: HTMLElement;
+	reactions: Array<Reaction>;
 };
 
 // Extract relevant information from single reaction
