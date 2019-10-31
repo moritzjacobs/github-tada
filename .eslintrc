@@ -21,6 +21,7 @@
 		}
 	},
 	"rules": {
+		"@typescript-eslint/strict-boolean-expressions": "off",
 		"no-tabs": "off",
 		"indent": ["error", "tab"],
 		"@typescript-eslint/indent": ["error", "tab"],
