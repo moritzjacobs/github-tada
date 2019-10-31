@@ -11,9 +11,11 @@
 		"test:watch": "jest --watch",
 		"test:lint": "eslint ./src",
 		"lint:fix": "eslint ./src --fix",
-		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o",
+		"dev": "webpack -w & web-ext run -t firefox-desktop -t chromium",
+		"chrome:dev": "webpack -w & web-ext run -t chromium",
 		"ff:dev": "webpack -w & web-ext run",
-		"ff:publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\*"
+		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o && yarn publish-src",
+		"publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\*"
 	},
 	"devDependencies": {
 		"@types/jest": "^24.0.21",
