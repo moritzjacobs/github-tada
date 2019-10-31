@@ -5,10 +5,11 @@
 	"author": "Moritz Jacobs <mail@moritzjacobs.de>",
 	"license": "MIT",
 	"scripts": {
-		"test": "yarn test:unit && yarn lint && yarn test:types",
+		"test": "yarn test:unit && yarn test:lint && yarn test:types",
 		"test:types": "tsc -p tsconfig.json --noEmit true",
 		"test:unit": "echo OK",
-		"lint": "eslint ./src",
+		"test:lint": "eslint ./src",
+		"lint:fix": "eslint ./src --fix",
 		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o",
 		"ff:dev": "webpack -w & web-ext run",
 		"ff:publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\*"
@@ -16,11 +17,11 @@
 	"devDependencies": {
 		"@types/react": "^16.9.11",
 		"@types/react-dom": "16.9.3",
-		"@typescript-eslint/eslint-plugin": "1.12.0",
+		"@typescript-eslint/eslint-plugin": "^2.6.0",
 		"@typescript-eslint/parser": "2.6.0",
 		"css-loader": "3.2.0",
 		"eslint": "6.6.0",
-		"eslint-config-peerigon": "21.2.0",
+		"eslint-config-peerigon": "^24.0.0",
 		"eslint-import-resolver-typescript": "2.0.0",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"eslint-plugin-prefer-arrow": "1.1.6",
