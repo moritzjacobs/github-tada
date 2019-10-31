@@ -16,5 +16,10 @@
 			]
 		}
 	],
+	"icons": {
+		"16": "icons/tada-openmoji-16.png",
+		"48": "icons/tada-openmoji-48.png",
+		"128": "icons/tada-openmoji-128.png"
+	},
 	"manifest_version": 2
 }
