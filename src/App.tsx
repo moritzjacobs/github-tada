@@ -3,10 +3,14 @@ import Button from "./Button";
 import {Comment} from "./comments";
 
 type Props = {
-	comments: Array<Comment>,
+	comments: Array<Comment>;
 };
 
 const App = ({comments}: Props) => {
+	if (comments.length < 1) {
+		return null;
+	}
+
 	return (
 		<>
 			<div className="discussion-sidebar-heading text-bold">

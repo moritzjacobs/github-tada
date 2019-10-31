@@ -5,6 +5,9 @@
 		"peerigon/typescript",
 		"peerigon/styles/prefer-arrow"
 	],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
 	"env": {
 		"node": true,
 		"browser": true
@@ -18,9 +21,10 @@
 		}
 	},
 	"rules": {
+		"@typescript-eslint/strict-boolean-expressions": "off",
 		"no-tabs": "off",
 		"indent": ["error", "tab"],
 		"@typescript-eslint/indent": ["error", "tab"],
 		"react/jsx-indent": ["error", "tab"]
-	},
+	}
 }
