@@ -10,7 +10,10 @@ import "./content.scss";
 const comments = getComments();
 // cache DOM els
 const header = document.querySelector(SELECTOR_TARGET);
-const rootElement = purgeAndRecreate();
 
-header.appendChild(rootElement);
-ReactDOM.render(<App comments={comments} />, rootElement);
+if (header) {
+	const rootElement = purgeAndRecreate();
+
+	header.appendChild(rootElement);
+	ReactDOM.render(comments && <App comments={comments} />, rootElement);
+}
