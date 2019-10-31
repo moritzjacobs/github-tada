@@ -4,6 +4,7 @@
 
 Firefox addon to browse Github issues by reaction
 
+![CircleCI](https://circleci.com/gh/moritzjacobs/github-tada/tree/master.svg?style=svg)
 
 [Screenshot](https://addons.cdn.mozilla.net/user-media/previews/full/225/225594.png)
 
@@ -14,8 +15,8 @@ Firefox addon to browse Github issues by reaction
 ## development
 
 1. `yarn` or `npm install` to setup
-2. `yarn dev` or `npm run dev` to open Firefox via `web-ext`
-3. `yarn publish` or `npm run publish` to generate all relevant distribution files
+2. `yarn ff:dev` or `npm run ff:dev` to open Firefox via `web-ext`
+3. `yarn ff:publish` or `npm run ff:publish` to generate all relevant distribution files
 
 ### Issues to get you started
 <https://github.com/prettier/prettier-vscode/issues/672>
