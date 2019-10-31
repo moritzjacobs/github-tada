@@ -4,6 +4,7 @@
 
 Firefox addon to browse Github issues by reaction
 
+![CircleCI](https://circleci.com/gh/moritzjacobs/github-tada/tree/master.svg?style=svg)
 
 [Screenshot](https://addons.cdn.mozilla.net/user-media/previews/full/225/225594.png)
 
