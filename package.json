@@ -5,39 +5,39 @@
 	"author": "Moritz Jacobs <mail@moritzjacobs.de>",
 	"license": "MIT",
 	"scripts": {
-		"test": "yarn lint && yarn build",
+		"test": "yarn test:unit && yarn lint && yarn test:types",
+		"test:types": "tsc -p tsconfig.json --noEmit true",
+		"test:unit": "echo OK",
 		"lint": "eslint ./src",
-		"web-ext:watch": "web-ext run",
-		"dev": "webpack -w & yarn web-ext:watch",
 		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o",
-		"prepublish": "yarn build && yarn publish-src",
-		"publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\*"
+		"ff:dev": "webpack -w & web-ext run",
+		"ff:publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\*"
 	},
 	"devDependencies": {
-		"@types/react": "16.9.4",
-		"@types/react-dom": "16.9.1",
+		"@types/react": "^16.9.11",
+		"@types/react-dom": "16.9.3",
 		"@typescript-eslint/eslint-plugin": "1.12.0",
-		"@typescript-eslint/parser": "2.3.2",
+		"@typescript-eslint/parser": "2.6.0",
 		"css-loader": "3.2.0",
-		"eslint": "6.5.1",
+		"eslint": "6.6.0",
 		"eslint-config-peerigon": "21.2.0",
-		"eslint-import-resolver-typescript": "^1.1.1",
+		"eslint-import-resolver-typescript": "2.0.0",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"eslint-plugin-prefer-arrow": "1.1.6",
-		"eslint-plugin-react": "7.15.1",
-		"eslint-plugin-react-hooks": "2.1.1",
+		"eslint-plugin-react": "7.16.0",
+		"eslint-plugin-react-hooks": "2.2.0",
 		"mini-css-extract-plugin": "0.8.0",
-		"node-sass": "^4.12.0",
+		"node-sass": "4.13.0",
 		"sass-loader": "8.0.0",
 		"style-loader": "1.0.0",
-		"ts-loader": "6.2.0",
-		"typescript": "3.6.3",
+		"ts-loader": "6.2.1",
+		"typescript": "3.6.4",
 		"web-ext": "3.2.0",
-		"webpack": "4.41.0",
-		"webpack-cli": "3.3.9"
+		"webpack": "4.41.2",
+		"webpack-cli": "3.3.10"
 	},
 	"dependencies": {
-		"react": "16.10.1",
-		"react-dom": "16.10.1"
+		"react": "16.11.0",
+		"react-dom": "16.11.0"
 	}
 }
