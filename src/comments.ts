@@ -18,14 +18,14 @@ export type Comment = {
 
 // Extract relevant information from single reaction
 const reactionParser = (el: HTMLButtonElement): Reaction => {
-	const type = el.value;
+	const type = el.value || "";
 	const emoji = el.querySelector(SELECTOR_EMOJI);
 	const textContent = el && el.textContent ? el.textContent : "";
 
 	const emojiTextContent =
 		emoji && emoji.textContent ? emoji.textContent : "";
 
-	const count = parseInt(textContent.replace(emojiTextContent, ""));
+	const count = parseInt(textContent.replace(emojiTextContent, "")) || 0;
 
 	return {
 		emoji: emojiTextContent,
@@ -36,23 +36,30 @@ const reactionParser = (el: HTMLButtonElement): Reaction => {
 
 // Extract relevant information from comment
 const commentParser = (el: HTMLElement): Comment => {
+	const target = el.querySelector<HTMLElement>(SELECTOR_COMMENT);
+
 	const reactionNodeList = el.querySelectorAll<HTMLButtonElement>(
 		SELECTOR_REACTION
 	);
 
 	const reactionEls = Array.from(reactionNodeList);
 
-	const reactions: Array<Reaction> = reactionEls
-		.map(reactionParser)
-		.filter((r: Reaction) => Boolean(r));
+	if (reactionEls.length > 0) {
+		const reactions: Array<Reaction> = reactionEls
+			.map(reactionParser)
+			.filter((r: Reaction) => r.emoji && r.count && r.type);
 
-	reactions.sort((a, b) => b.count - a.count);
+		reactions.sort((a, b) => b.count - a.count);
 
-	const target = el.querySelector<HTMLElement>(SELECTOR_COMMENT);
+		return {
+			target,
+			reactions,
+		};
+	}
 
 	return {
 		target,
-		reactions,
+		reactions: [],
 	};
 };
 
