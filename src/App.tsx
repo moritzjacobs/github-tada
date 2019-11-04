@@ -16,7 +16,7 @@ const App = ({comments}: Props) => {
 			<div className="discussion-sidebar-heading text-bold">
 				Browse by reaction
 			</div>
-			{comments.map(c => (
+			{comments.map(c => c.target && (
 				<Button key={c.target.dataset.gid} target={c.target} reactions={c.reactions} />
 			))}
 		</>

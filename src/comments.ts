@@ -12,7 +12,7 @@ export type Reaction = {
 };
 
 export type Comment = {
-	target: HTMLElement;
+	target: HTMLElement | null;
 	reactions: Array<Reaction>;
 };
 
@@ -50,10 +50,6 @@ const commentParser = (el: HTMLElement): Comment => {
 
 	const target = el.querySelector<HTMLElement>(SELECTOR_COMMENT);
 
-	if (!target) {
-		throw new Error("no parseable target div found");
-	}
-
 	return {
 		target,
 		reactions,
@@ -62,21 +58,15 @@ const commentParser = (el: HTMLElement): Comment => {
 
 // parse comments from DOM and return data structure
 const getComments = (): Array<Comment> => {
-	try {
-		const commentsEls = document.querySelectorAll<HTMLElement>(
-			SELECTOR_COMMENT_CONTAINER
-		);
+	const commentsEls = document.querySelectorAll<HTMLElement>(
+		SELECTOR_COMMENT_CONTAINER
+	);
 
-		const arr = Array.from(commentsEls, commentParser);
+	const arr = Array.from(commentsEls, commentParser);
 
-		return arr.filter(
-			(comment: Comment) => comment.reactions && comment.reactions.length > 0
-		);
-	} catch (error) {
-		console.error(error);
-
-		return [];
-	}
+	return arr.filter(
+		(comment: Comment) => comment.reactions && comment.reactions.length > 0
+	);
 };
 
 export default getComments;
