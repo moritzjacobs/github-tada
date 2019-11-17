@@ -15,7 +15,7 @@
 		"chrome:dev": "webpack -w & web-ext run -t chromium",
 		"ff:dev": "webpack -w & web-ext run",
 		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o && yarn publish-src",
-		"publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\*"
+		"publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\* ./.git/\\*"
 	},
 	"devDependencies": {
 		"@types/jest": "24.0.23",
