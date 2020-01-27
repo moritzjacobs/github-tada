@@ -14,7 +14,7 @@
 		"other:publishSrc": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\* ./.git/\\*",
 		"other:updates": "updtr",
 		"start": "yarn dev",
-		"test": "yarn test:unit && yarn test:lint && yarn test:types",
+		"test": "yarn test:unit && yarn test:lint && yarn test:types && yarn test:scripts",
 		"test:lint": "eslint ./src",
 		"test:scripts": "scriptlint",
 		"test:types": "tsc -p tsconfig.json --noEmit true",
@@ -26,7 +26,7 @@
 	},
 	"devDependencies": {
 		"@types/jest": "24.9.1",
-		"@types/react": "16.9.11",
+		"@types/react": "^16.9.19",
 		"@types/react-dom": "16.9.5",
 		"@types/react-test-renderer": "16.9.2",
 		"@typescript-eslint/eslint-plugin": "2.17.0",
