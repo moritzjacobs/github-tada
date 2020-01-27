@@ -5,17 +5,24 @@
 	"author": "Moritz Jacobs <mail@moritzjacobs.de>",
 	"license": "MIT",
 	"scripts": {
+		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o && yarn publishSrc",
+		"dev": "webpack -w & web-ext run -t firefox-desktop -t chromium",
+		"dev:chrome": "webpack -w & web-ext run -t chromium",
+		"dev:ff": "webpack -w & web-ext run",
+		"format:fix": "eslint ./src --fix",
+		"format:scripts": "scriptlint --fix",
+		"other:publishSrc": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\* ./.git/\\*",
+		"other:updates": "updtr",
+		"start": "yarn dev",
 		"test": "yarn test:unit && yarn test:lint && yarn test:types",
+		"test:lint": "eslint ./src",
+		"test:scripts": "scriptlint",
 		"test:types": "tsc -p tsconfig.json --noEmit true",
 		"test:unit": "jest",
-		"test:watch": "jest --watch",
-		"test:lint": "eslint ./src",
-		"lint:fix": "eslint ./src --fix",
-		"dev": "webpack -w & web-ext run -t firefox-desktop -t chromium",
-		"chrome:dev": "webpack -w & web-ext run -t chromium",
-		"ff:dev": "webpack -w & web-ext run",
-		"build": "rm -rf dist/ && rm -rf ./web-ext-artifacts && yarn webpack && web-ext build -o && yarn publish-src",
-		"publish-src": "zip -r ../github-tada-src.zip ./ -x ./.scripts/\\* ./dist/\\* ./node_modules/\\* ./web-ext-artifacts/\\* ./.git/\\*"
+		"test:watch": "jest --watch"
+	},
+	"scriptlint": {
+		"strict": true
 	},
 	"devDependencies": {
 		"@types/jest": "24.0.23",
