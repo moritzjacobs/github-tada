@@ -21,7 +21,9 @@ describe("<App/>", () => {
 		expect(tree).toMatchSnapshot();
 	});
 	it("renders correctly when there are items", () => {
-		const tree = renderer.create(<App comments={[{target, reactions}]} />).toJSON();
+		const tree = renderer
+			.create(<App comments={[{ target, reactions }]} />)
+			.toJSON();
 
 		expect(tree).toMatchSnapshot();
 	});
