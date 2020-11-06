@@ -1,6 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import createApp from "./createApp";
 import getComments from "./comments";
 import { purgeAndRecreate } from "./utils";
 import { SELECTOR_TARGET } from "./constants";
@@ -15,5 +13,9 @@ if (header) {
 	const rootElement = purgeAndRecreate();
 
 	header.appendChild(rootElement);
-	ReactDOM.render(<App comments={comments} />, rootElement);
+	const app = createApp({ comments });
+
+	if (app) {
+		app.forEach((el) => el && rootElement.appendChild(el));
+	}
 }

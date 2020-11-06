@@ -2,7 +2,7 @@
 
 # github-tada
 
-Firefox addon to browse Github issues by reaction
+Web extenstion to browse Github issues by reaction
 
 ![CI badge](https://github.com/moritzjacobs/github-tada/workflows/ci/badge.svg)
 
@@ -10,13 +10,15 @@ Firefox addon to browse Github issues by reaction
 
 ## Installation
 
-[Get it from the Firefox Add-on gallery](https://addons.mozilla.org/en-US/firefox/addon/github-tada/)
+🦊 [Get it from the Firefox Add-on gallery](https://addons.mozilla.org/en-US/firefox/addon/github-tada/)
+
+🌈 [Get it from the Chrome web store](https://chrome.google.com/webstore/search/github-tada)
 
 ## development
 
 1. `npm install` to setup
-2. `npm run ff:dev` to open Firefox via `web-ext`
-3. `npm run ff:publish` to generate all relevant distribution files
+2. `npm run dev` to open Firefox and Chrome via `web-ext`
+3. `npm run build` to generate all relevant distribution files
 
 ### Issues to get you started
 

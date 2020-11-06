@@ -1,5 +1,5 @@
 {
-	"extends": ["peerigon/presets/prettier-typescript-react.js"],
+	"extends": ["peerigon/presets/prettier-typescript.js"],
 	"parserOptions": {
 		"project": "./tsconfig.json",
 		"sourceType": "module"
@@ -8,20 +8,9 @@
 		"node": true,
 		"browser": true
 	},
-	// "root": true,
-	// "settings": {
-	// 	"import/resolver": {
-	// 		"node": {
-	// 			"extensions": [".js", ".jsx", ".ts", ".tsx"]
-	// 		}
-	// 	}
-	// },
 	"rules": {
 		"@typescript-eslint/strict-boolean-expressions": "off",
 		"import/extensions": "off",
-		"no-tabs": "off",
-		"indent": ["error", "tab"],
-		"@typescript-eslint/indent": ["error", "tab"],
-		"react/jsx-indent": ["error", "tab"]
+		"no-tabs": "off"
 	}
 }
