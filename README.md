@@ -14,12 +14,14 @@ Firefox addon to browse Github issues by reaction
 
 ## development
 
-1. `yarn` or `npm install` to setup
-2. `yarn ff:dev` or `npm run ff:dev` to open Firefox via `web-ext`
-3. `yarn ff:publish` or `npm run ff:publish` to generate all relevant distribution files
+1. `npm install` to setup
+2. `npm run ff:dev` to open Firefox via `web-ext`
+3. `npm run ff:publish` to generate all relevant distribution files
 
 ### Issues to get you started
+
 <https://github.com/prettier/prettier-vscode/issues/672>
 
 ## Credits
+
 Icon by [openmoji.org](https://openmoji.org/library/#search=tada&emoji=1F389) (CC BY-SA 4.0)
