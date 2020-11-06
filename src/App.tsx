@@ -1,12 +1,12 @@
 import React from "react";
 import Button from "./Button";
-import {Comment} from "./comments";
+import { Comment } from "./comments";
 
 type Props = {
 	comments: Array<Comment>;
 };
 
-const App = ({comments}: Props) => {
+const App = ({ comments }: Props) => {
 	if (comments.length < 1) {
 		return null;
 	}
@@ -16,9 +16,16 @@ const App = ({comments}: Props) => {
 			<div className="discussion-sidebar-heading text-bold">
 				Browse by reaction
 			</div>
-			{comments.map(c => c.target && (
-				<Button key={c.target.dataset.gid} target={c.target} reactions={c.reactions} />
-			))}
+			{comments.map(
+				(c) =>
+					c.target && (
+						<Button
+							key={c.target.dataset.gid}
+							target={c.target}
+							reactions={c.reactions}
+						/>
+					)
+			)}
 		</>
 	);
 };
