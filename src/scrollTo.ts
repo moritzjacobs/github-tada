@@ -1,11 +1,11 @@
-import {CLASS_HIGHLIGHT} from "./constants";
+import { CLASS_HIGHLIGHT } from "./constants";
 
 // Click handler: scroll into view
 const scrollTo = (targetCommentEl: HTMLElement): void => {
-	targetCommentEl.scrollIntoView({behavior: "smooth", block: "center"});
+	targetCommentEl.scrollIntoView({ behavior: "smooth", block: "center" });
 
 	// remove highlight from any other comment ...
-	const highlighted = document.querySelectorAll(CLASS_HIGHLIGHT);
+	const highlighted = document.querySelectorAll(`.${CLASS_HIGHLIGHT}`);
 
 	for (const item of highlighted) {
 		item.classList.remove(CLASS_HIGHLIGHT);
