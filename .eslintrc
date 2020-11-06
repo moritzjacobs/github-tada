@@ -1,27 +1,24 @@
 {
-	"extends": [
-		"peerigon",
-		"peerigon/react",
-		"peerigon/typescript",
-		"peerigon/styles/prefer-arrow"
-	],
+	"extends": ["peerigon/presets/prettier-typescript-react.js"],
 	"parserOptions": {
-		"project": "./tsconfig.json"
+		"project": "./tsconfig.json",
+		"sourceType": "module"
 	},
 	"env": {
 		"node": true,
 		"browser": true
 	},
-	"root": true,
-	"settings": {
-		"import/resolver": {
-			"node": {
-				"extensions": [".js", ".jsx", ".ts", ".tsx"]
-			}
-		}
-	},
+	// "root": true,
+	// "settings": {
+	// 	"import/resolver": {
+	// 		"node": {
+	// 			"extensions": [".js", ".jsx", ".ts", ".tsx"]
+	// 		}
+	// 	}
+	// },
 	"rules": {
 		"@typescript-eslint/strict-boolean-expressions": "off",
+		"import/extensions": "off",
 		"no-tabs": "off",
 		"indent": ["error", "tab"],
 		"@typescript-eslint/indent": ["error", "tab"],

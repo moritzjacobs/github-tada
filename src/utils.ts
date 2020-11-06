@@ -1,8 +1,8 @@
-import {GRB, CLASS_WRAPPER} from "./constants";
+import { GRB, CLASS_WRAPPER } from "./constants";
 
 // safely remove a DOM node
 export const removeElement = (element: HTMLElement) => {
-	element && element.parentNode && element.parentNode.removeChild(element);
+	element.parentNode?.removeChild(element);
 };
 
 // remove old self before creating a new one
