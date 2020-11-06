@@ -20,10 +20,9 @@ export type Comment = {
 const reactionParser = (el: HTMLButtonElement): Reaction => {
 	const type = el.value || "";
 	const emoji = el.querySelector(SELECTOR_EMOJI);
-	const textContent = el && el.textContent ? el.textContent : "";
+	const textContent = el.textContent ?? "";
 
-	const emojiTextContent =
-		emoji && emoji.textContent ? emoji.textContent : "";
+	const emojiTextContent = emoji?.textContent ?? "";
 
 	const count = parseInt(textContent.replace(emojiTextContent, "")) || 0;
 
@@ -71,9 +70,7 @@ const getComments = (): Array<Comment> => {
 
 	const arr = Array.from(commentsEls, commentParser);
 
-	return arr.filter(
-		(comment: Comment) => comment.reactions && comment.reactions.length > 0
-	);
+	return arr.filter((comment: Comment) => comment.reactions.length > 0);
 };
 
 export default getComments;
