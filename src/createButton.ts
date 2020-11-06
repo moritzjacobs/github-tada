@@ -1,7 +1,7 @@
 import { Comment } from "./comments";
 import scrollTo from "./scrollTo";
 import { CLASS_BUTTON, CLASS_REACTION } from "./constants";
-import { createElement } from "./DOM";
+import { createElement } from "./Xeact";
 
 const createButton = ({ target, reactions }: Comment) =>
 	target

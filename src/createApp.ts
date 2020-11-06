@@ -1,6 +1,6 @@
 import createButton from "./createButton";
 import { Comment } from "./comments";
-import { createElement } from "./DOM";
+import { createElement } from "./Xeact";
 
 type Props = {
 	comments: Array<Comment>;
