@@ -1,6 +1,4 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import App from "./App";
+import createApp from "./createApp";
 
 const reactions = [
 	{
@@ -14,16 +12,15 @@ const target = document.createElement("div");
 
 target.dataset.gid = "1234";
 
-describe("<App/>", () => {
+describe("createApp()", () => {
 	it("renders correctly when there are no items", () => {
-		const tree = renderer.create(<App comments={[]} />).toJSON();
+		const tree = createApp({ comments: [] });
 
 		expect(tree).toMatchSnapshot();
 	});
+
 	it("renders correctly when there are items", () => {
-		const tree = renderer
-			.create(<App comments={[{ target, reactions }]} />)
-			.toJSON();
+		const tree = createApp({ comments: [{ target, reactions }] });
 
 		expect(tree).toMatchSnapshot();
 	});
