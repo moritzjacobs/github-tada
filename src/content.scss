@@ -21,7 +21,10 @@ $baseClass: ".grb";
 	justify-content: flex-start;
 	margin-top: 16px;
 	padding-top: 16px;
+	padding-bottom: 16px;
 	border-top: 1px solid #e1e4e8;
+	max-height: calc(100vh - 50px);
+	overflow: auto;
 }
 
 #{$baseClass}-button {
