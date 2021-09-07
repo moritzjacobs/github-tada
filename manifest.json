@@ -12,6 +12,7 @@
 			],
 			"matches": [
 				"https://github.com/*/issues/*",
+				"https://github.com/*/discussions/*",
 				"https://github.com/*/pull/*"
 			]
 		}
