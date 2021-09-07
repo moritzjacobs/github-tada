@@ -5,6 +5,6 @@ export const CLASS_WRAPPER = "grb-browser";
 export const GRB = "grb";
 export const SELECTOR_COMMENT = ".js-comment";
 export const SELECTOR_COMMENT_CONTAINER = ".js-comment-container";
-export const SELECTOR_EMOJI = ".emoji";
+export const SELECTOR_EMOJI = ".social-button-emoji";
 export const SELECTOR_REACTION = ".reaction-summary-item";
 export const SELECTOR_TARGET = "#partial-discussion-sidebar";
