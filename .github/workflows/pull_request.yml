@@ -1,0 +1,21 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types: [labeled, ready_for_review, opened, synchronize, reopened]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+        with:
+          install-command: npm ci --prefer-offline --no-audit
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+      - name: Run tests
+        run: npm run test
